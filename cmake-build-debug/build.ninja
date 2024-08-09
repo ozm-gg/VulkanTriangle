@@ -47,7 +47,7 @@ cmake_ninja_workdir = C$:/CLionProjects/VulkanTriangle/cmake-build-debug/
 #############################################
 # Order-only phony target for VulkanTriangle
 
-build cmake_object_order_depends_target_VulkanTriangle: phony || CMakeFiles/VulkanTriangle.dir
+build cmake_object_order_depends_target_VulkanTriangle: phony || run_setup
 
 build CMakeFiles/VulkanTriangle.dir/main.cpp.obj: CXX_COMPILER__VulkanTriangle_unscanned_Debug C$:/CLionProjects/VulkanTriangle/main.cpp || cmake_object_order_depends_target_VulkanTriangle
   DEP_FILE = CMakeFiles\VulkanTriangle.dir\main.cpp.obj.d
@@ -64,7 +64,7 @@ build CMakeFiles/VulkanTriangle.dir/main.cpp.obj: CXX_COMPILER__VulkanTriangle_u
 #############################################
 # Link the executable VulkanTriangle.exe
 
-build VulkanTriangle.exe: CXX_EXECUTABLE_LINKER__VulkanTriangle_Debug CMakeFiles/VulkanTriangle.dir/main.cpp.obj
+build VulkanTriangle.exe: CXX_EXECUTABLE_LINKER__VulkanTriangle_Debug CMakeFiles/VulkanTriangle.dir/main.cpp.obj || run_setup
   FLAGS = -g
   LINK_LIBRARIES = -lglfw3  -lvulkan-1  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/VulkanSDK/1.3.290.0/Lib   -LC:/Libraries/GLFW/lib-mingw-w64
@@ -74,6 +74,12 @@ build VulkanTriangle.exe: CXX_EXECUTABLE_LINKER__VulkanTriangle_Debug CMakeFiles
   TARGET_FILE = VulkanTriangle.exe
   TARGET_IMPLIB = libVulkanTriangle.dll.a
   TARGET_PDB = VulkanTriangle.exe.dbg
+
+
+#############################################
+# Utility command for run_setup
+
+build run_setup: phony CMakeFiles/run_setup
 
 
 #############################################
@@ -97,6 +103,13 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Custom command for CMakeFiles\run_setup
+
+build CMakeFiles/run_setup | ${cmake_ninja_workdir}CMakeFiles/run_setup: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\CLionProjects\VulkanTriangle && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E env cmd /c C:/CLionProjects/VulkanTriangle/setup.bat"
 
 # =============================================================================
 # Target aliases.

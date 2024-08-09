@@ -1,3 +1,4 @@
 C:/CLionProjects/VulkanTriangle/cmake-build-debug/CMakeFiles/VulkanTriangle.dir
+C:/CLionProjects/VulkanTriangle/cmake-build-debug/CMakeFiles/run_setup.dir
 C:/CLionProjects/VulkanTriangle/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/CLionProjects/VulkanTriangle/cmake-build-debug/CMakeFiles/rebuild_cache.dir

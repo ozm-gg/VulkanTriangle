@@ -19,3 +19,14 @@ target_link_directories(${PROJECT_NAME} PUBLIC ${GLFW_DIR}/lib-mingw-w64)
 target_link_libraries(${PROJECT_NAME} glfw3)
 target_link_libraries(${PROJECT_NAME} vulkan-1)
 
+
+set(SETUP_SCRIPT ${CMAKE_SOURCE_DIR}/setup.bat)
+
+
+add_custom_target(run_setup
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        COMMAND ${CMAKE_COMMAND} -E env cmd /c ${SETUP_SCRIPT}
+        VERBATIM
+)
+
+add_dependencies(${PROJECT_NAME} run_setup)
